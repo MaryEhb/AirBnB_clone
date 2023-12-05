@@ -19,7 +19,7 @@ class BaseModel:
                     format = '%Y-%m-%dT%H:%M:%S.%f'
                     date_obj = datetime.strptime(value, format)
                     setattr(self, key, date_obj)
-                if key != '__class__':
+                elif key != '__class__':
                     setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())

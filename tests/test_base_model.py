@@ -8,6 +8,10 @@ from datetime import datetime
 class TestBaseModel(unittest.TestCase):
     """TestBaseModel Class"""
 
+    def setUp(self):
+        """setup method"""
+        pass
+
     def test_no_args(self):
         """Test BaseModel initialization with no arguments"""
         obj = BaseModel()

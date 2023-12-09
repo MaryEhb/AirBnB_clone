@@ -2,7 +2,7 @@
 """test state class"""
 import unittest
 from models.base_model import BaseModel
-from moodels.state import State
+from models.state import State
 
 
 class TestState(unittest.TestCase):

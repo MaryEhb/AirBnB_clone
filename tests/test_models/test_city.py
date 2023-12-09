@@ -4,7 +4,7 @@ import unittest
 from models.base_model import BaseModel
 from models.city import City
 
-class TestState(unittest.TestCase):
+class TestCity(unittest.TestCase):
     """test state class"""
     def test_city(self):
         """test of city"""

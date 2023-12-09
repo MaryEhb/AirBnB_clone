@@ -14,7 +14,7 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """Executed when an instance is initialized"""
 
-        if len(kwargs) != 0:
+        if kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key in ['created_at', 'updated_at']:
                     format = '%Y-%m-%dT%H:%M:%S.%f'

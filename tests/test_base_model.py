@@ -72,3 +72,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(obj_dict['id'], "123")
         self.assertEqual(obj_dict['custom_attr'], "value")
         self.assertEqual(obj_dict['__class__'], "BaseModel")
+
+if __name__ == '__main__':
+    unittest.main()

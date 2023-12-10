@@ -169,6 +169,12 @@ class HBNBCommand(cmd.Cmd):
                 self.do_all(className)
             elif (command == 'count()'):
                 self.do_count(className)
+            elif 'show(' in command and ')' in command:
+                show_arg = className + ' ' + command[6:-2]
+                self.do_show(show_arg)
+            elif 'destroy(' in command and ')' in command:
+                destroy_arg = className + ' ' + command[9:-2]
+                self.do_destroy(destroy_arg)
 
 
 if __name__ == '__main__':

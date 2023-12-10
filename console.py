@@ -97,9 +97,13 @@ class HBNBCommand(cmd.Cmd):
         based or not on the class name.
         Ex: $ all BaseModel or $ all.
         '''
-        if className == '' or className in globals():
-            for [k, obj] in storage.all().items():
+        if className == '':
+            for obj in storage.all().values():
                 print(obj)
+        elif className in globals():
+            for obj in storage.all().values():
+                if obj.__class__.__name__ == className:
+                    print(obj)
         else:
             print("** class doesn't exist **")
 
@@ -137,6 +141,17 @@ class HBNBCommand(cmd.Cmd):
                                 storage.save()
                     else:
                         print("** no instance found **")
+
+    def default(self, line: str) -> None:
+        """
+        Called on an input line when the command prefix is not recognized.
+        """
+        if '.' in line:
+            args = line.split('.')
+            className = args[0]
+            command = args[1]
+            if (command == 'all()'):
+                self.do_all(className)
 
 
 if __name__ == '__main__':

@@ -4,6 +4,7 @@ import ast
 import cmd
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
@@ -53,11 +54,11 @@ class HBNBCommand(cmd.Cmd):
                 if not id:
                     print("** instance id missing **")
                 else:
-                    for [k, obj] in storage.all().items():
-                        if (obj.id == id):
-                            print(obj)
-                            return
-                    print("** no instance found **")
+                    key = className + '.' + id
+                    if key in storage.all().keys():
+                        print(storage.all()[key])
+                    else:
+                        print("** no instance found **")
 
     def do_destroy(self, args):
         """

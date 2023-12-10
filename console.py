@@ -142,6 +142,21 @@ class HBNBCommand(cmd.Cmd):
                     else:
                         print("** no instance found **")
 
+    def do_count(self, className):
+        """Retrieve the number of instances of a class"""
+        cnt = 0
+        if className == '':
+            for obj in storage.all().values():
+                cnt += 1
+            print(cnt)
+        elif className in globals():
+            for obj in storage.all().values():
+                if obj.__class__.__name__ == className:
+                    cnt += 1
+            print(cnt)
+        else:
+            print("** class doesn't exist **")
+
     def default(self, line: str) -> None:
         """
         Called on an input line when the command prefix is not recognized.
@@ -152,6 +167,8 @@ class HBNBCommand(cmd.Cmd):
             command = args[1]
             if (command == 'all()'):
                 self.do_all(className)
+            elif (command == 'count()'):
+                self.do_count(className)
 
 
 if __name__ == '__main__':

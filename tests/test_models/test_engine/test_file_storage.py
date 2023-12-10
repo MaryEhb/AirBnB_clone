@@ -48,7 +48,7 @@ class TestEngine(unittest.TestCase):
 
     def test_obj_type_dict(self):
         """test obj type"""
-         self.assertEqual(type(FileStorage._FileStorage__objects), dict)
+        self.assertEqual(type(FileStorage._FileStorage__objects), dict)
 
     def test_all(self):
         """test all method"""
@@ -180,7 +180,9 @@ class TestEngine(unittest.TestCase):
         objs = FileStorage._FileStorage__objects
         self.assertIn("BaseModel." + obj.id, objs)
 
-
+    def test_reload_none(self):
+        with self.assertRaises(TypeError):
+            storage.reload(None)
 
 if __name__ == '__main__':
     unittest.main()

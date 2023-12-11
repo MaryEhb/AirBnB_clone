@@ -13,6 +13,11 @@ The goal of this project is to:
 - Develop the first abstracted storage engine for the project: File storage.
 - Construct comprehensive unit tests to validate classes and the storage engine.
 
+## Installation
+Clone this repo in your trminal
+```
+$ git clone https://github.com/MaryEhb/AirBnB_clone
+```
 
 ## Execution
 The Shell works in both interactive and non-interactive modes. Examples include:

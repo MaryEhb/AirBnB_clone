@@ -4,6 +4,12 @@ import ast
 import cmd
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
@@ -53,11 +59,11 @@ class HBNBCommand(cmd.Cmd):
                 if not id:
                     print("** instance id missing **")
                 else:
-                    for [k, obj] in storage.all().items():
-                        if (obj.id == id):
-                            print(obj)
-                            return
-                    print("** no instance found **")
+                    key = className + '.' + id
+                    if key in storage.all().keys():
+                        print(storage.all()[key])
+                    else:
+                        print("** no instance found **")
 
     def do_destroy(self, args):
         """
@@ -91,9 +97,13 @@ class HBNBCommand(cmd.Cmd):
         based or not on the class name.
         Ex: $ all BaseModel or $ all.
         '''
-        if className == '' or className in globals():
-            for [k, obj] in storage.all().items():
+        if className == '':
+            for obj in storage.all().values():
                 print(obj)
+        elif className in globals():
+            for obj in storage.all().values():
+                if obj.__class__.__name__ == className:
+                    print(obj)
         else:
             print("** class doesn't exist **")
 
@@ -131,6 +141,40 @@ class HBNBCommand(cmd.Cmd):
                                 storage.save()
                     else:
                         print("** no instance found **")
+
+    def do_count(self, className):
+        """Retrieve the number of instances of a class"""
+        cnt = 0
+        if className == '':
+            for obj in storage.all().values():
+                cnt += 1
+            print(cnt)
+        elif className in globals():
+            for obj in storage.all().values():
+                if obj.__class__.__name__ == className:
+                    cnt += 1
+            print(cnt)
+        else:
+            print("** class doesn't exist **")
+
+    def default(self, line: str) -> None:
+        """
+        Called on an input line when the command prefix is not recognized.
+        """
+        if '.' in line:
+            args = line.split('.')
+            className = args[0]
+            command = args[1]
+            if (command == 'all()'):
+                self.do_all(className)
+            elif (command == 'count()'):
+                self.do_count(className)
+            elif 'show(' in command and ')' in command:
+                show_arg = className + ' ' + command[6:-2]
+                self.do_show(show_arg)
+            elif 'destroy(' in command and ')' in command:
+                destroy_arg = className + ' ' + command[9:-2]
+                self.do_destroy(destroy_arg)
 
 
 if __name__ == '__main__':

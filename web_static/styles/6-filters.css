@@ -63,8 +63,16 @@
 	font-size: 16px;
 }
 
+.filters .amenities .popover{
+	padding: 30px;
+}
+
 .filters ul{
 	list-style: none;
+}
+
+.filters ul li ul li{
+	padding: 30px;
 }
 
 .filters .locations:hover .popover, .filters .amenities:hover .popover{

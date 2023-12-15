@@ -27,7 +27,7 @@
 }
 
 .filters .amenities{
-	flex-grow: 1;
+	margin-right: auto;
 }
 
 .filters .locations, .filters .amenities{

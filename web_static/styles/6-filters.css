@@ -49,6 +49,17 @@
 
 .filters .popover{
 	display: none;
+	border-right: solid 1px #DDD;
+	background-color #FAFAFA;
+	border-radius: 4px;
+}
+
+.filters .popover h2{
+	font-size: 16px;
+}
+
+.filters ul{
+	list-style: none;
 }
 
 .filters .locations:hover .popover, .filters .amenities:hover .popover{

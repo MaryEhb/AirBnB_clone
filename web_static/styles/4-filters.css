@@ -1,4 +1,4 @@
-.filter{
+.filters{
 	height: 70px;
 	width: 100%;
 	border-radius: 4px;
@@ -8,7 +8,7 @@
 	padding-right: 30px;
 }
 
-.filter button{
+.filters button{
 	font-size: 18px;
 	background-color: #FF5A5F;
 	color: #FFF;
@@ -19,6 +19,6 @@
 	align-self: right;
 }
 
-.filter button:hover{
+.filters button:hover{
 	opacity: 90%;
 }

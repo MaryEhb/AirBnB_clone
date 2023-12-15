@@ -55,6 +55,7 @@
 	border: solid 1px #DDD;
 	background-color: #FAFAFA;
 	border-radius: 4px;
+	z-index: 1;
 }
 
 .filters .popover h2{

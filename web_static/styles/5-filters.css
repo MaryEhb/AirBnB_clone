@@ -22,8 +22,12 @@
 	opacity: 90%;
 }
 
-.filters .location{
+.filters .locations{
 	border-right: solid 1px #DDD;
+}
+
+.filters .amenities{
+	flex-grow: 1;
 }
 
 .filters .locations, .filters .amenities{

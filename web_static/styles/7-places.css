@@ -1,9 +1,13 @@
 .places{
 	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .places h1{
 	font-size: 30px;
+	width: 100%;
 }
 
 .places article{
@@ -13,7 +17,6 @@
 	border: solid 1px #FF5A5F;
 	border-radius: 4px;
 	text-align: center;
-	display: inline-block;
 }
 
 .places article h2{

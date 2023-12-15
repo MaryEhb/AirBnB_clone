@@ -72,7 +72,7 @@
 }
 
 .filters ul li ul li{
-	padding: 30px;
+	padding-left: 25px;
 }
 
 .filters .locations:hover .popover, .filters .amenities:hover .popover{

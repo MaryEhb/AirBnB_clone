@@ -3,7 +3,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	position: relative;
 }
 
 .places h1{
@@ -17,13 +16,14 @@
 	margin: 20px;
 	border: solid 1px #FF5A5F;
 	border-radius: 4px;
-	text-align: center;
+	position: relative;
 }
 
 .places article h2{
 	font-size: 30px;
 	margin: 0;
 	padding: 0;
+	text-align: center;
 }
 
 .places .price_by_night{
@@ -35,6 +35,7 @@
 	position: absolute;
 	top: 30px;
 	right: 30px;
+	border-radius: 50%;
 
 }
 

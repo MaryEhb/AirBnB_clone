@@ -33,9 +33,12 @@
 	height: 60px;
 	font-size: 30px;
 	position: absolute;
-	top: 30px;
-	right: 30px;
+	top: 20px;
+	right: 20px;
 	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 }
 
@@ -46,7 +49,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: space-between;
-	margin: 20px 0;
+	margin-bottom: 20px;
+	margin-top: 50px;
 }
 
 .places .information div{

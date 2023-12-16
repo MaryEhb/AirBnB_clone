@@ -51,15 +51,34 @@
 	align-items: space-between;
 	margin-bottom: 20px;
 	margin-top: 50px;
+	padding-bottom: 10px;
 }
 
 .places .information div{
 	width: 100px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.places .information div:before{
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 117%;
+	background-repeat: no-repeat;
 }
 
 .places .information .max_guest:before{
-	content: '';
 	background-image: url('../images/icon_group.png')
+}
+
+.places .information .number_rooms:before{
+        background-image: url('../images/icon_bed.png')
+}
+
+.places .information .number_bathrooms:before{
+        background-image: url('../images/icon_bath.png')
 }
 
 .places .user .owner{

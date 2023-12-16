@@ -19,7 +19,7 @@
 	position: relative;
 }
 
-.places article h2::first-child{
+.places article h2:first-child{
 	font-size: 30px;
 	margin: 0;
 	padding: 0;
@@ -109,14 +109,14 @@
 	background-position: left top;
 }
 
-.places .amenities .icon_pet{
+.places .amenities .pet_icon{
 	background-image: url('../images/icon_pets.png')
 }
 
-.places .amenities .icon_wifi{
+.places .amenities .wifi_icon{
         background-image: url('../images/icon_wifi.png')
 }
 
-.places .amenities .icon_tv{
+.places .amenities .tv_icon{
         background-image: url('../images/icon_tv.png')
 }

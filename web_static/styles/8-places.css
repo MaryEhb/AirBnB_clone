@@ -39,7 +39,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
+	padding: 5px;
 }
 
 .places .information{
@@ -55,6 +55,11 @@
 
 .places .information div{
 	width: 100px;
+}
+
+.places .information .max_guest:before{
+	content: '';
+	background-image: url('../images/icon_group.png')
 }
 
 .places .user .owner{

@@ -19,7 +19,7 @@
 	position: relative;
 }
 
-.places article h2:first-child{
+.places article h2.title{
 	font-size: 30px;
 	margin: 0;
 	padding: 0;
@@ -88,16 +88,16 @@
 	font-weight: bold;
 }
 
-.places .amenities{
+.places .amenities, .places .reviews{{
 	margin-top: 40px;
 }
 
-.places .amenities h2{
+.places .amenities h2, .places .reviews h2{
 	font-size: 16px;
 	border-bottom: solid 1px #DDD;
 }
 
-.places .amenities ul{
+.places .amenities ul, .places .reviews ul{
 	list-style: none;
 }
 
@@ -107,6 +107,7 @@
 	padding-left: 44px;
 	background-repeat: no-repeat;
 	background-position: left top;
+	background-size: 30px;
 }
 
 .places .amenities .pet_icon{
@@ -120,3 +121,9 @@
 .places .amenities .tv_icon{
         background-image: url('../images/icon_tv.png')
 }
+
+.places p{
+	font-size: 12px;
+}
+
+
